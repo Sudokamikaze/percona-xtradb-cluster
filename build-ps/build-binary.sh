@@ -707,12 +707,12 @@ fi
 (
     cd "$TARGETDIR/usr/local/"
     # PS-4854 Percona Server for MySQL tarball without AGPLv3 dependency/license
-    find $PRODUCT_FULL -type f -name 'COPYING.AGPLv3' -delete
+    find $PRODUCT_FULL_NAME -type f -name 'COPYING.AGPLv3' -delete
     $TAR --owner=0 --group=0 -czf "$TARGETDIR/$PRODUCT_FULL_NAME.tar.gz" $PRODUCT_FULL_NAME
 
     cd "$TARGETDIR/usr/local/minimal/"
     # PS-4854 Percona Server for MySQL tarball without AGPLv3 dependency/license
-    find $PRODUCT_FULL -type f -name 'COPYING.AGPLv3' -delete
+    find $PRODUCT_FULL_NAME-minimal -type f -name 'COPYING.AGPLv3' -delete
     $TAR --owner=0 --group=0 -czf "$TARGETDIR/$PRODUCT_FULL_NAME-minimal.tar.gz" $PRODUCT_FULL_NAME-minimal
 ) || exit 1
 
